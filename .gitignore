@@ -1,0 +1,5 @@
+# Ignore everything except the page and CNAME
+*
+!index.html
+!CNAME
+!.gitignore
