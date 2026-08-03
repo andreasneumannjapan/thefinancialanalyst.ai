@@ -1,5 +1,8 @@
-# Ignore everything except the page and CNAME
+# Ignore everything except the page, CNAME, and the assets index.html references
 *
 !index.html
 !CNAME
 !.gitignore
+!favicon-32.png
+!favicon-180.png
+!logo-mark.png

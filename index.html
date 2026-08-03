@@ -3,23 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Financial Analyst — AI-Powered Corporate Finance Analysis</title>
+<title>The Financial Analyst: AI-Powered Corporate Finance Analysis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
 <style>
   :root {
-    --ink: #0f1117;
-    --ink-secondary: #4a4a52;
-    --ink-tertiary: #8a8a94;
-    --surface: #f8f6f1;
+    --ink: #1d1d1f;
+    --ink-secondary: #6e6e73;
+    --ink-tertiary: #86868b;
+    --surface: #ffffff;
     --surface-card: #ffffff;
-    --accent: #b07d2e;
-    --accent-light: #e8d5a8;
-    --accent-muted: #f5edd8;
-    --rule: #e0dcd4;
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
-    --mono: 'JetBrains Mono', monospace;
+    --accent: #6e6e73;
+    --accent-light: #d2d2d7;
+    --accent-muted: #f5f5f7;
+    --rule: #d2d2d7;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    --serif: var(--sans);
+    --mono: 'SF Mono', 'JetBrains Mono', ui-monospace, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -34,25 +36,40 @@
 
   /* NAV */
   nav {
-    padding: 1.5rem 3rem;
+    padding: 1.25rem 3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 0.5px solid var(--rule);
     position: sticky;
     top: 0;
-    background: rgba(248, 246, 241, 0.96);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 100;
     transition: box-shadow 0.3s;
   }
   nav.scrolled {
-    box-shadow: 0 4px 20px rgba(15, 17, 23, 0.05);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
   }
-  .nav-name {
-    font-family: var(--serif);
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+  }
+  .nav-logo-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ink);
+    flex-shrink: 0;
+  }
+  .nav-logo-text {
+    font-family: var(--sans);
     font-size: 15px;
-    letter-spacing: 0.02em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     color: var(--ink);
   }
   .nav-links {
@@ -68,46 +85,58 @@
     text-transform: uppercase;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover { color: var(--ink); }
 
   /* HERO */
   .hero {
-    padding: 7rem 3rem 5rem;
+    padding: 9rem 3rem 6rem;
     max-width: 900px;
     margin: 0 auto;
-    opacity: 0;
-    animation: fadeUp 0.8s ease forwards;
+    text-align: center;
   }
-  .hero-label {
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    font-family: var(--sans);
+  .hero-logo {
+    height: 104px;
+    width: 104px;
+    margin: 0 auto 2rem;
+    display: block;
   }
   .hero h1 {
     font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 500;
-    line-height: 1.2;
+    font-size: clamp(2.75rem, 7vw, 5.25rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.06;
     color: var(--ink);
-    margin-bottom: 2rem;
+    margin: 0 auto 1.75rem;
     max-width: 780px;
   }
   .hero h1 em {
-    font-style: italic;
-    color: var(--accent);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--ink-secondary);
   }
-  .hero-body { max-width: 640px; }
-  .hero-body p {
-    font-size: 17px;
+  .hero-sub {
+    font-size: 19px;
+    color: var(--ink-secondary);
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* HERO INTRO: supporting copy, relocated below the headline */
+  .hero-intro {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 3rem 4rem;
+  }
+  .hero-intro p {
+    font-size: 15.5px;
     color: var(--ink-secondary);
     line-height: 1.8;
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
+    text-align: center;
   }
-  .hero-body p:last-child { margin-bottom: 0; }
+  .hero-intro p:last-child { margin-bottom: 0; }
 
   /* DIVIDER */
   .divider {
@@ -121,20 +150,19 @@
   .framing {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 3rem 5rem;
+    padding: 0 3rem 7rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
     align-items: start;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.2s forwards;
   }
   .framing-label {
     font-family: var(--serif);
-    font-size: 1.35rem;
-    font-weight: 500;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
     color: var(--ink);
-    line-height: 1.4;
+    line-height: 1.3;
   }
   .framing-body p {
     color: var(--ink-secondary);
@@ -146,9 +174,7 @@
   /* TOOL SECTION */
   .tools-section {
     background: var(--ink);
-    padding: 5rem 3rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.35s forwards;
+    padding: 8rem 3rem;
   }
   .tools-inner { max-width: 900px; margin: 0 auto; }
   .tools-header { margin-bottom: 3.5rem; }
@@ -162,10 +188,11 @@
   }
   .tools-header h2 {
     font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #f0ece3;
-    line-height: 1.3;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #f5f5f7;
+    line-height: 1.2;
   }
   .tool-card {
     border-top: 0.5px solid #2a2a35;
@@ -189,8 +216,8 @@
   .tool-name {
     font-family: var(--serif);
     font-size: 1.3rem;
-    color: #f0ece3;
-    font-weight: 500;
+    color: #f5f5f7;
+    font-weight: 600;
     margin-bottom: 0.4rem;
     line-height: 1.3;
   }
@@ -219,9 +246,7 @@
   .architecture {
     max-width: 900px;
     margin: 0 auto;
-    padding: 5rem 3rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.5s forwards;
+    padding: 8rem 3rem;
   }
   .arch-header {
     display: grid;
@@ -232,25 +257,34 @@
   }
   .arch-label-heading {
     font-family: var(--serif);
-    font-size: 1.35rem;
-    font-weight: 500;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
     color: var(--ink);
-    line-height: 1.4;
+    line-height: 1.3;
   }
   .arch-body p {
     font-size: 15px;
     color: var(--ink-secondary);
     line-height: 1.8;
-    margin-bottom: 1rem;
   }
-  .arch-body p:last-child { margin-bottom: 0; }
+  .arch-block { margin-bottom: 2rem; }
+  .arch-block:last-child { margin-bottom: 0; }
+  .arch-block-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
 
   /* Pipeline diagram */
   .pipeline {
-    border: 0.5px solid var(--rule);
-    border-radius: 8px;
+    border-radius: 16px;
     padding: 2rem;
     background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 16px 40px rgba(0, 0, 0, 0.08);
   }
   .pipeline-row {
     display: flex;
@@ -279,28 +313,29 @@
   .pipeline-node {
     background: var(--accent-muted);
     border: 0.5px solid var(--accent-light);
-    border-radius: 4px;
-    padding: 0.35rem 0.75rem;
+    border-radius: 980px;
+    padding: 0.35rem 0.85rem;
     font-size: 12.5px;
     color: var(--ink);
-    font-weight: 400;
+    font-weight: 500;
     transition: all 0.2s ease;
     cursor: default;
   }
   .pipeline-node:hover {
-    border-color: var(--accent);
+    border-color: var(--ink);
     transform: translateY(-1px);
   }
   .pipeline-node.output {
     background: var(--ink);
-    color: #f0ece3;
+    color: #ffffff;
     border-color: var(--ink);
     transition: all 0.2s ease;
   }
   .pipeline-node.output:hover,
   .pipeline-node.output.highlight {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: #ffffff;
+    color: var(--ink);
+    border-color: var(--ink);
     transform: translateY(-1px);
   }
   /* Enrichment node hover highlights the related output */
@@ -317,15 +352,13 @@
 
   /* CLOSING */
   .closing {
-    padding: 3.5rem 3rem;
+    padding: 5rem 3rem;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.65s forwards;
     border-top: 0.5px solid var(--rule);
   }
   .closing p {
@@ -340,18 +373,30 @@
     font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--accent);
+    font-weight: 600;
+    color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid var(--accent-light);
+    border-bottom: 1px solid var(--rule);
     padding-bottom: 2px;
     white-space: nowrap;
     transition: border-color 0.2s;
   }
-  .closing-link:hover { border-color: var(--accent); }
+  .closing-link:hover { border-color: var(--ink); }
+
+  .closing-brand {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.1rem;
+  }
+  .closing-mark {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    opacity: 0.85;
+  }
 
   /* SAMPLE OUTPUTS */
   .sample-outputs {
-    padding: 5rem 3rem;
+    padding: 8rem 3rem;
     background: var(--surface);
   }
   .sample-inner { max-width: 900px; margin: 0 auto; }
@@ -366,10 +411,11 @@
   }
   .sample-header h2 {
     font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--ink);
-    line-height: 1.3;
+    line-height: 1.2;
     margin-bottom: 0.75rem;
   }
   .sample-header p {
@@ -380,9 +426,9 @@
   }
   .doc-excerpt-embed {
     background: white;
-    border: 0.5px solid var(--rule);
-    border-radius: 6px;
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 16px 40px rgba(0, 0, 0, 0.08);
   }
   .dee-header {
     background: var(--ink);
@@ -422,16 +468,16 @@
     color: var(--accent-light);
     background: transparent;
     border: 0.5px solid #3a3a48;
-    border-radius: 3px;
-    padding: 0.35rem 0.75rem;
+    border-radius: 980px;
+    padding: 0.45rem 1rem;
     cursor: pointer;
     transition: all 0.2s;
     flex-shrink: 0;
   }
   .dee-export-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent-light);
-    background: rgba(176, 125, 46, 0.08);
+    border-color: #ffffff;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
   }
   .dee-export-btn svg {
     width: 11px;
@@ -445,25 +491,27 @@
   }
   .dee-tab-bar {
     display: flex;
+    gap: 0.3rem;
+    padding: 0.85rem 1.5rem;
+    background: var(--accent-muted);
     border-bottom: 0.5px solid var(--rule);
-    background: white;
   }
   .dee-tab-btn {
-    padding: 0.75rem 1.4rem;
+    padding: 0.55rem 1.1rem;
     font-size: 12px;
     font-family: var(--sans);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ink-tertiary);
-    background: none;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--ink-secondary);
+    background: transparent;
     border: none;
-    border-bottom: 2px solid transparent;
+    border-radius: 980px;
     cursor: pointer;
     transition: all 0.2s;
     font-weight: 500;
   }
-  .dee-tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); }
-  .dee-tab-btn:hover { color: var(--ink-secondary); }
+  .dee-tab-btn.active { color: var(--ink); background: #ffffff; font-weight: 600; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
+  .dee-tab-btn:hover:not(.active) { color: var(--ink); }
   .dee-tab-panel { display: none; }
   .dee-tab-panel.active { display: block; }
   .dee-body { padding: 2rem 2.5rem; }
@@ -499,8 +547,8 @@
   }
   .dee-exec-title {
     font-family: var(--serif);
-    font-size: 1.05rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
     margin-bottom: 1.25rem;
     color: var(--ink);
   }
@@ -521,9 +569,9 @@
   .dee-a strong { color: var(--ink); font-weight: 500; }
   .dee-rec {
     background: var(--accent-muted);
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--ink);
     padding: 1rem 1.25rem;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 12px 12px 0;
     margin-top: 1.5rem;
   }
   .dee-rec-label {
@@ -546,10 +594,9 @@
     margin: 1.25rem 0 1.75rem;
   }
   .dee-metric {
-    background: var(--surface);
-    border: 0.5px solid var(--rule);
-    border-radius: 4px;
-    padding: 0.75rem 1rem;
+    background: var(--accent-muted);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
   }
   .dee-metric-label {
     font-size: 11px;
@@ -578,35 +625,46 @@
     border-top: 0.5px solid var(--rule);
   }
 
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* RESPONSIVE */
   @media (max-width: 700px) {
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
-    .hero, .framing, .architecture, .closing { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .tools-section { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .sample-outputs { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding: 5rem 1.25rem 3rem; }
+    .hero-intro { padding: 0 1.25rem 3rem; }
+    .framing { padding: 0 1.25rem 4rem; }
+    .architecture { padding: 4rem 1.25rem; }
+    .tools-section { padding: 4.5rem 1.25rem; }
+    .sample-outputs { padding: 4.5rem 1.25rem; }
+    .closing { padding: 3rem 1.25rem; }
     .framing, .arch-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .tool-card { grid-template-columns: 1fr; gap: 1rem; }
-    .closing { flex-direction: column; }
+    .closing { flex-direction: column; align-items: flex-start; }
     .dee-metrics { grid-template-columns: 1fr; }
-    .dee-tab-btn { padding: 0.65rem 0.75rem; font-size: 11px; }
+    .dee-tab-bar { flex-wrap: wrap; }
+    .dee-tab-btn { padding: 0.5rem 0.85rem; font-size: 11px; }
     .dee-body { padding: 1.5rem 1.25rem; }
     .dee-header { flex-wrap: wrap; gap: 0.75rem; }
   }
 
-  /* PRINT STYLES — scopes export to active brief only */
+  /* PRINT STYLES: scopes export to active brief only */
   @media print {
-    nav, .hero, .divider, .framing, .tools-section, .architecture,
+    nav, .hero, .hero-intro, .divider, .framing, .tools-section, .architecture,
     .sample-header, .dee-header, .dee-tab-bar, .closing, .dee-anon { display: none !important; }
     body { background: white; font-size: 13px; }
     .sample-outputs { padding: 0; }
     .sample-inner { max-width: 100%; }
+    .reveal { opacity: 1 !important; transform: none !important; }
     .doc-excerpt-embed { border: none; box-shadow: none; }
     .dee-tab-panel { display: none !important; }
     .dee-tab-panel.active { display: block !important; }
@@ -630,7 +688,10 @@
 <body>
 
 <nav id="navbar">
-  <span class="nav-name">Andreas Cavalca Neumann</span>
+  <a href="#" class="nav-logo" aria-label="The Financial Analyst home">
+    <span class="nav-logo-dot" aria-hidden="true"></span>
+    <span class="nav-logo-text">The Financial Analyst</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#tools">The Tools</a></li>
     <li><a href="#how">The Workflow</a></li>
@@ -639,29 +700,32 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <p class="hero-label">The Financial Analyst — Agentic analysis for CFO-level decisions</p>
-  <h1>One Pipeline.<br><em>Three Decisions.</em></h1>
-  <div class="hero-body">
-    <p>Corporate finance teams face a structural tension: the decisions that matter most — credit exposure, capital allocation, portfolio performance — demand analysis that is both fast and rigorous. This is not a problem of talent or intent. It is a problem of analytical infrastructure.</p>
-    <p>This page presents a fully operational agentic system I designed and built for decision-making in corporate finance. It is not a product; it is a demonstration of how agentic analysis — designed with the right frameworks and the right quality controls — can remove friction from executive decisions.</p>
-  </div>
+<section class="hero reveal">
+  <img src="logo-mark.png" alt="The Financial Analyst" class="hero-logo">
+  <h1>One pipeline.<br><em>Three decisions.</em></h1>
+  <p class="hero-sub">Agentic analysis built to remove friction from the decisions that matter most to a CFO: credit exposure, capital allocation, and portfolio performance.</p>
+</section>
+
+<!-- HERO INTRO -->
+<section class="hero-intro reveal">
+  <p>Corporate finance teams face a structural tension: the decisions that matter most (credit exposure, capital allocation, portfolio performance) demand analysis that's both fast and rigorous. Automating the existing 5-day process would still take days. The Financial Analyst replaces the process itself, delivering the same decision-ready analysis in 2 hours.</p>
+  <p>This page is a working demonstration: an agent, not a chatbot or a dashboard, built for decision-making in corporate finance. Given a goal such as a credit review or an investment screen, it plans and executes the full analysis itself, rather than waiting for the next prompt or reporting on work already done.</p>
 </section>
 
 <div class="divider"></div>
 
 <!-- FRAMING -->
-<section class="framing">
+<section class="framing reveal">
   <div>
-    <p class="framing-label">The binding constraint is rarely access to the data.<br>It is the friction that sits between asking the right questions and finding relevant answers.</p>
+    <p class="framing-label">The binding constraint is the friction that sits between asking the right questions<br>and finding relevant answers.</p>
   </div>
   <div class="framing-body">
-    <p>The Financial Analyst does not replace the CFO's judgment; it concentrates and systematises the analysis that judgment relies on — producing decision briefs across three domains from a single, consistent workflow.</p>
+    <p>Data access usually isn't the constraint: most of what a CFO needs is already public, in filings and market feeds. The Financial Analyst concentrates and systematises the analysis the CFO's judgment relies on, producing decision briefs across three domains from a single, consistent workflow. It doesn't replace that judgment.</p>
   </div>
 </section>
 
 <!-- TOOLS -->
-<section class="tools-section" id="tools">
+<section class="tools-section reveal" id="tools">
   <div class="tools-inner">
     <div class="tools-header">
       <p class="section-label">Three CFO Domains</p>
@@ -669,7 +733,7 @@
     </div>
 
     <!-- Card 1: Credit Risk -->
-    <div class="tool-card">
+    <div class="tool-card reveal">
       <div class="tool-meta">
         <p class="tool-number">01</p>
         <p class="tool-name">Credit Risk</p>
@@ -678,21 +742,21 @@
       <div class="tool-content">
         <div class="tool-block">
           <p class="tool-block-label">The Problem</p>
-          <p>A CFO authorising credit exposure — to a counterparty, a borrower, or a joint venture partner — needs more than a financial summary. They need a structured view of debt serviceability, covenant headroom, liquidity under stress, and the structural conditions that could accelerate or contain default. That analysis is time-consuming to produce consistently, and quality varies depending on who runs it and when.</p>
+          <p>A CFO authorising credit exposure (to a counterparty, a borrower, or a joint venture partner) needs a structured view of debt serviceability, covenant headroom, liquidity under stress, and the conditions that could accelerate or contain default. A financial summary alone doesn't give them that, and that analysis is time-consuming to produce consistently: quality varies depending on who runs it and when.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">What It Produces</p>
-          <p>A structured credit brief with an executive summary built around four blocks — credit profile, key risks, structural protections, and recommendation — followed by a full assessment covering capital structure, debt capacity, stress scenarios, and qualitative probability of default. Appendices hold the technical data; the brief is executive-ready.</p>
+          <p>A structured credit brief with an executive summary built around four blocks (credit profile, key risks, structural protections, and recommendation), followed by a full assessment covering capital structure, debt capacity, stress scenarios, and qualitative probability of default. Appendices hold the technical data; the brief is executive-ready.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">The Standard It Applies</p>
-          <p>Credit analysis grounded in public financials, live market data, and a stress framework designed to surface the scenarios that matter — not the base case, but the conditions under which the exposure becomes a problem.</p>
+          <p>Credit analysis grounded in public financials, live market data, and a stress framework designed to surface the conditions under which the exposure becomes a problem, not the base case.</p>
         </div>
       </div>
     </div>
 
     <!-- Card 2: Investment Screening -->
-    <div class="tool-card">
+    <div class="tool-card reveal" style="transition-delay: 0.08s;">
       <div class="tool-meta">
         <p class="tool-number">02</p>
         <p class="tool-name">Investment Screening</p>
@@ -701,21 +765,21 @@
       <div class="tool-content">
         <div class="tool-block">
           <p class="tool-block-label">The Problem</p>
-          <p>Before a finance team commits weeks of bandwidth to due diligence, a prior question needs answering: is this target worth the cost of looking closely? That screening judgment — is this a good business, at what price, with what structural risks — is often made informally, inconsistently, or not at all. The result is either wasted due diligence capacity or missed opportunities that never made it to the table.</p>
+          <p>Before a finance team commits weeks of bandwidth to due diligence, a prior question needs answering: is this target worth the cost of looking closely? That screening judgment (is this a good business, at what price, with what structural risks) is often made informally, inconsistently, or not at all. The result is either wasted due diligence capacity or missed opportunities that never made it to the table.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">What It Produces</p>
-          <p>A structured investment brief covering business quality, competitive position, financial performance, and valuation against sector benchmarks. Designed to answer the two questions that matter before committing time and resources: is this a good business, and what is the right engagement structure? A pre-diligence screening instrument, not a substitute for it.</p>
+          <p>A structured investment brief covering business quality, competitive position, financial performance, and valuation against sector benchmarks. It answers the two questions that matter before committing time and resources: is this a good business, and what is the right engagement structure? A pre-diligence screening instrument, not a substitute for one.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">The Standard It Applies</p>
-          <p>Relevant valuation frameworks, live peer multiples, sector margin and WACC benchmarks — applied rigorously at the screening stage, so that the decision to commit due diligence resources is anchored in valuation reality rather than made after the fact.</p>
+          <p>Relevant valuation frameworks, live peer multiples, and sector margin and WACC benchmarks, applied rigorously at the screening stage, so the decision to commit due diligence resources reflects valuation reality rather than getting made after the fact.</p>
         </div>
       </div>
     </div>
 
     <!-- Card 3: BU Performance -->
-    <div class="tool-card">
+    <div class="tool-card reveal" style="transition-delay: 0.16s;">
       <div class="tool-meta">
         <p class="tool-number">03</p>
         <p class="tool-name">Business Unit Performance</p>
@@ -724,15 +788,15 @@
       <div class="tool-content">
         <div class="tool-block">
           <p class="tool-block-label">The Problem</p>
-          <p>A CFO reviewing a portfolio of business units needs to answer two questions that internal reporting rarely surfaces cleanly: first, which units are creating value above their cost of capital and which are destroying it, and second, what does the external sector benchmark say about whether that is structural or recoverable? Most BU reviews answer the first question with precision and the second not at all — which makes it hard to distinguish units that need fixing from units that should be exited.</p>
+          <p>A CFO reviewing a portfolio of business units needs to answer two questions that internal reporting rarely surfaces cleanly: first, which units are creating value above their cost of capital and which are destroying it, and second, what does the external sector benchmark say about whether that is structural or recoverable? Most BU reviews answer the first question with precision and the second not at all, which makes it hard to distinguish units that need fixing from units that should be exited.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">What It Produces</p>
-          <p>A business unit brief combining internal financial performance with external sector benchmarking — margin position, ROIC versus WACC, and peer comparison. The brief tells decision-makers whether each unit is performing in line with its strategic track. The internal and external lenses sit in the same document, against the same analytical standard.</p>
+          <p>A business unit brief combining internal financial performance with external sector benchmarking: margin position, ROIC versus WACC, and peer comparison. The brief tells decision-makers whether each unit is performing in line with its strategic track, with the internal and external analysis sitting in the same document against the same standard.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">The Standard It Applies</p>
-          <p>Sector data for margins, multiples, WACC, and beta — the external reference frame that converts an internal performance view into a value creation assessment.</p>
+          <p>Sector data for margins, multiples, WACC, and beta: the external reference point that turns an internal performance view into a value creation assessment.</p>
         </div>
       </div>
     </div>
@@ -741,15 +805,25 @@
 </section>
 
 <!-- ARCHITECTURE -->
-<section class="architecture" id="how">
+<section class="architecture reveal" id="how">
   <div class="arch-header">
     <div>
       <p class="arch-label-heading">One workflow.<br>Consistent inputs.<br>Three analytical outputs.</p>
     </div>
     <div class="arch-body">
-      <p>The system is fully agentic and operates end-to-end from a single email command. A run is triggered by sending a one-line instruction to the system's inbox — ticker, domain, and optional scope. Stage 1 fires automatically: it discovers which of the company's investor relations filings may be relevant and sends them for human review before anything is downloaded. After selection of which documents enter the pipeline, Stage 2 then ingests those filings alongside market data and sector benchmarks and passes the full package to a reasoning engine operating under domain-specific instructions. The completed brief is delivered by email as both a formatted document and a styled HTML output, accompanied by a summary of key metrics.</p>
-      <p>The human review step at document selection is deliberate. Investor relations pages vary widely by company; automated selection would occasionally pull the wrong documents into a high-stakes analytical output. Keeping a human in the loop at this step is quality control by design — not a limitation of the technology, but a considered judgement about where autonomous execution is appropriate and where it is not.</p>
-      <p>The architecture was designed with CFO decisions in mind — and building it end-to-end was a deliberate choice, not a necessity. A finance executive does not need to write code — but to commission analytical infrastructure well, to evaluate whether the output is good enough to act on, and to hold a team accountable for what it produces, they need to understand the architecture at the level of design. This is what I practise here: treating AI-powered analysis as an executive design problem, not a technical experiment.</p>
+      <div class="arch-block">
+        <p class="arch-block-label">How it runs</p>
+        <p>The system is fully agentic and operates end-to-end from a single email command. A run is triggered by sending a one-line instruction to the system's inbox: ticker, domain, and optional scope. Stage 1 fires automatically: it discovers which of the company's investor relations filings may be relevant and sends them for human review before anything is downloaded. After selection of which documents enter the pipeline, Stage 2 then ingests those filings alongside market data and sector benchmarks and passes the full package to a reasoning engine operating under domain-specific instructions. The completed brief is delivered by email as both a formatted document and a styled HTML output, accompanied by a summary of key metrics.</p>
+      </div>
+      <div class="arch-block">
+        <p class="arch-block-label">The human checkpoint</p>
+        <p>The human review step at document selection is deliberate. Investor relations pages vary widely by company; automated selection would occasionally pull the wrong documents into a high-stakes analytical output. Keeping a human in the loop at this step is quality control by design: a considered judgement about where autonomous execution is appropriate and where it isn't.</p>
+      </div>
+      <div class="arch-block">
+        <p class="arch-block-label">Why build it this way</p>
+        <p>Most agentic AI projects fail on vague scope, missing checkpoints, or ambiguous decision rules, not on model quality. That's the reason for three narrow domains instead of a general-purpose assistant, one deliberate human checkpoint, and fixed analytical frameworks instead of open-ended prompts. MIT Sloan researcher Andrew Lo points to building AI systems that are accountable by design as the main unresolved barrier to wider AI adoption in finance: the human checkpoint above exists for that reason.</p>
+        <p>The architecture was designed with CFO decisions in mind, and building it end-to-end was a deliberate choice, not a necessity. A finance executive doesn't need to write code, but does need to understand the architecture at the level of design: enough to commission analytical infrastructure well, evaluate whether the output is good enough to act on, and hold a team accountable for what it produces. That's what I practise here: I treat AI-powered analysis as an executive design problem.</p>
+      </div>
     </div>
   </div>
 
@@ -793,19 +867,19 @@
 </section>
 
 <!-- SAMPLE OUTPUTS -->
-<section class="sample-outputs" id="sample">
+<section class="sample-outputs reveal" id="sample">
   <div class="sample-inner">
 
     <div class="sample-header">
       <p class="section-label">The Outputs</p>
       <h2>What the workflow produces.</h2>
-      <p>Three decision-ready briefs — one per CFO domain. Company references anonymised.</p>
+      <p>Three decision-ready briefs, one per CFO domain. Company references anonymised.</p>
     </div>
 
     <div class="doc-excerpt-embed">
       <div class="dee-header">
         <div class="dee-header-left">
-          <span class="dee-header-title">Sample Outputs — The Financial Analyst</span>
+          <span class="dee-header-title">Sample Outputs · The Financial Analyst</span>
           <span class="dee-header-tag">Anonymised · For illustration only</span>
         </div>
         <button class="dee-export-btn" onclick="exportBrief()" aria-label="Export active brief as PDF">
@@ -817,15 +891,15 @@
       </div>
 
       <div class="dee-tab-bar" role="tablist" aria-label="The Financial Analyst decision briefs">
-        <button class="dee-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-credit" id="tab-btn-credit" onclick="showTab('credit', this)">01 — Credit Risk</button>
-        <button class="dee-tab-btn" role="tab" aria-selected="false" aria-controls="tab-investment" id="tab-btn-investment" onclick="showTab('investment', this)">02 — Investment Screening</button>
-        <button class="dee-tab-btn" role="tab" aria-selected="false" aria-controls="tab-bu" id="tab-btn-bu" onclick="showTab('bu', this)">03 — Business Unit</button>
+        <button class="dee-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-credit" id="tab-btn-credit" onclick="showTab('credit', this)">01 · Credit Risk</button>
+        <button class="dee-tab-btn" role="tab" aria-selected="false" aria-controls="tab-investment" id="tab-btn-investment" onclick="showTab('investment', this)">02 · Investment Screening</button>
+        <button class="dee-tab-btn" role="tab" aria-selected="false" aria-controls="tab-bu" id="tab-btn-bu" onclick="showTab('bu', this)">03 · Business Unit</button>
       </div>
 
       <!-- CREDIT TAB -->
       <div class="dee-tab-panel active" id="tab-credit" role="tabpanel" aria-labelledby="tab-btn-credit">
         <div class="dee-body">
-          <p class="print-header">The Financial Analyst — Credit Risk Brief (Sample)</p>
+          <p class="print-header">The Financial Analyst · Credit Risk Brief (Sample)</p>
           <p class="dee-toc-label">Contents</p>
           <ul class="dee-toc-list">
             <li><strong>Executive summary</strong></li>
@@ -847,19 +921,19 @@
           </ul>
           <hr class="dee-divider">
           <p class="dee-exec-title">Executive Summary</p>
-          <div class="dee-qa"><p class="dee-q">What is this company?</p><p class="dee-a">Europe's largest aerospace manufacturer — generating €73 billion in annual revenue — designing, building, and selling commercial aircraft, military systems, and helicopters to customers across more than 100 countries.</p></div>
-          <div class="dee-qa"><p class="dee-q">Is it financially sound?</p><p class="dee-a">External agency ratings were not available in the source documents for this analysis. The company holds more cash and investments than it owes in financial debt — a net cash position of approximately €3 billion — and generated €4 billion in free cash flow in 2025, giving it substantial financial cushion to service any obligations.</p></div>
-          <div class="dee-qa"><p class="dee-q">What are the main risks?</p><p class="dee-a">First, the acquisition of several manufacturing facilities from a struggling supplier in late 2025 has already increased costs and triggered over €700 million in write-downs, with full cost normalisation years away. Second, the single-aisle production ramp-up — the most profitable product line — is being held back by engine shortages, capping near-term revenue growth. Third, a large portion of revenue is earned in US dollars while most costs are in euros, meaning a strengthening euro directly reduces the value of each aircraft sold.</p></div>
+          <div class="dee-qa"><p class="dee-q">What is this company?</p><p class="dee-a">Europe's largest aerospace manufacturer, generating €73 billion in annual revenue, designing, building, and selling commercial aircraft, military systems, and helicopters to customers across more than 100 countries.</p></div>
+          <div class="dee-qa"><p class="dee-q">Is it financially sound?</p><p class="dee-a">External agency ratings were not available in the source documents for this analysis. The company holds more cash and investments than it owes in financial debt (a net cash position of approximately €3 billion) and generated €4 billion in free cash flow in 2025, giving it substantial financial cushion to service any obligations.</p></div>
+          <div class="dee-qa"><p class="dee-q">What are the main risks?</p><p class="dee-a">First, the acquisition of several manufacturing facilities from a struggling supplier in late 2025 has already increased costs and triggered over €700 million in write-downs, with full cost normalisation years away. Second, the single-aisle production ramp-up (the most profitable product line) is being held back by engine shortages, capping near-term revenue growth. Third, a large portion of revenue is earned in US dollars while most costs are in euros, meaning a strengthening euro directly reduces the value of each aircraft sold.</p></div>
           <div class="dee-qa"><p class="dee-q">What is our view?</p><p class="dee-a">A strong credit supported by an unmatched order backlog of €619 billion and a net cash balance sheet. This view would need reassessment if supply-chain integration costs escalate materially beyond current provisions or if the production ramp-up suffers a sustained setback that erodes free cash flow below €3 billion annually.</p></div>
-          <div class="dee-rec"><p class="dee-rec-label">Recommendation — Senior debt</p><p class="dee-rec-text"><strong>HOLD</strong> at current spread levels. A net cash consolidated balance sheet (net debt/EBITDA of -0.30×), a €619 billion order backlog representing approximately 8.4 years of revenue visibility, and gross interest coverage exceeding 13× support the current position. The Hold rather than Buy reflects open supply-chain integration risk and USD/EUR headwinds that limit the case for incremental exposure in the 7–10 year tenor.</p></div>
-          <p class="dee-anon">Company name and specific transaction references anonymised. External agency ratings were not available in the source documents — this reflects honest sourcing practice, not an analytical gap. Financial figures are illustrative of the analytical output — not for investment purposes.</p>
+          <div class="dee-rec"><p class="dee-rec-label">Recommendation: Senior debt</p><p class="dee-rec-text"><strong>HOLD</strong> at current spread levels. A net cash consolidated balance sheet (net debt/EBITDA of -0.30×), a €619 billion order backlog representing approximately 8.4 years of revenue visibility, and gross interest coverage exceeding 13× support the current position. The Hold rather than Buy reflects open supply-chain integration risk and USD/EUR headwinds that limit the case for incremental exposure in the 7–10 year tenor.</p></div>
+          <p class="dee-anon">Company name and specific transaction references anonymised. External agency ratings were not available in the source documents: that reflects honest sourcing practice, not an analytical gap. Financial figures are illustrative of the analytical output, not for investment purposes.</p>
         </div>
       </div>
 
       <!-- INVESTMENT TAB -->
       <div class="dee-tab-panel" id="tab-investment" role="tabpanel" aria-labelledby="tab-btn-investment">
         <div class="dee-body">
-          <p class="print-header">The Financial Analyst — Investment Screening Brief (Sample)</p>
+          <p class="print-header">The Financial Analyst · Investment Screening Brief (Sample)</p>
           <p class="dee-toc-label">Contents</p>
           <ul class="dee-toc-list">
             <li><strong>1. Executive summary</strong></li>
@@ -885,18 +959,18 @@
             <div class="dee-metric"><p class="dee-metric-label">Sector</p><p class="dee-metric-value" style="font-family:var(--mono);font-size:0.8rem;line-height:1.3;">Industrials</p><p class="dee-metric-sub">Aerospace &amp; Defence</p></div>
             <div class="dee-metric"><p class="dee-metric-label">Adj. EBIT Margin</p><p class="dee-metric-value">16.9%</p><p class="dee-metric-sub">FY2025 · ROCE 23.5%</p></div>
           </div>
-          <div class="dee-qa"><p class="dee-q">Is this a good business?</p><p class="dee-a">Yes. The company holds dominant positions in mission-critical, highly specified propulsion systems — tracked-vehicle transmissions and naval gear units — with switching costs that make displacement economically and technically prohibitive. Revenue has compounded at ~22% over three years, adjusted EBIT margin stands at 16.9%, and ROCE of 23.5% materially exceeds the Damodaran Aerospace &amp; Defence cost of capital of ~9–10%. A €2.3 billion fixed order backlog against €1.4 billion in annual revenue provides demand visibility that civilian industrial peers cannot match.</p></div>
-          <div class="dee-qa"><p class="dee-q">What is the right engagement structure?</p><p class="dee-a">The central tension is valuation: the stock trades at 22× EV/EBITDA and 45× trailing P/E — multiples that embed years of uninterrupted defence-cycle execution — while the business carries €383 million in net debt and a cash conversion rate that has structurally undershot management's 80% benchmark (three-year average: 54.6%). Equity entry requires conviction on the NATO spending supercycle and flawless system-integrator execution. M&amp;A engagement at the segment level warrants deeper diligence on NWC dynamics before committing capital.</p></div>
-          <div class="dee-qa"><p class="dee-q">Key risks before committing</p><p class="dee-a">FCF conversion deficit — the business earns well but converts to cash slowly due to NWC intensity at 25.2% of revenue. Segment-level cracks visible: the Marine &amp; Industry margin collapsed to 6.7% in Q1 2026 on a single supplier shortage. A high-growth defence valuation leaves no room for execution missteps; beta of 2.12 versus a sector average of ~1.26 reflects the market's own assessment of that fragility.</p></div>
-          <div class="dee-rec"><p class="dee-rec-label">Preliminary view</p><p class="dee-rec-text"><strong>PROCEED TO DILIGENCE</strong> — the competitive moat and backlog visibility justify closer examination. Scope diligence to focus on NWC normalisation trajectory and FCF conversion quality before committing capital. Current valuation leaves a thin margin of safety; any slippage in backlog-to-revenue conversion would reprice the growth premium sharply.</p></div>
-          <p class="dee-anon">Company name and specific references anonymised. Financial figures are illustrative of the analytical output — not for investment purposes.</p>
+          <div class="dee-qa"><p class="dee-q">Is this a good business?</p><p class="dee-a">Yes. The company holds dominant positions in highly specified propulsion systems: tracked-vehicle transmissions and naval gear units, with switching costs that make displacement economically and technically prohibitive. Revenue has compounded at ~22% over three years, adjusted EBIT margin stands at 16.9%, and ROCE of 23.5% materially exceeds the Damodaran Aerospace &amp; Defence cost of capital of ~9–10%. A €2.3 billion fixed order backlog against €1.4 billion in annual revenue provides demand visibility that civilian industrial peers cannot match.</p></div>
+          <div class="dee-qa"><p class="dee-q">What is the right engagement structure?</p><p class="dee-a">The central tension is valuation: the stock trades at 22× EV/EBITDA and 45× trailing P/E (multiples that embed years of uninterrupted defence-cycle execution) while the business carries €383 million in net debt and a cash conversion rate that has structurally undershot management's 80% benchmark (three-year average: 54.6%). Equity entry requires conviction on the NATO spending supercycle and flawless system-integrator execution. M&amp;A engagement at the segment level warrants deeper diligence on NWC dynamics before committing capital.</p></div>
+          <div class="dee-qa"><p class="dee-q">Key risks before committing</p><p class="dee-a">FCF conversion deficit: the business earns well but converts to cash slowly due to NWC intensity at 25.2% of revenue. Segment-level cracks visible: the Marine &amp; Industry margin collapsed to 6.7% in Q1 2026 on a single supplier shortage. A high-growth defence valuation leaves no room for execution missteps; beta of 2.12 versus a sector average of ~1.26 reflects the market's own assessment of that fragility.</p></div>
+          <div class="dee-rec"><p class="dee-rec-label">Preliminary view</p><p class="dee-rec-text"><strong>PROCEED TO DILIGENCE</strong>: the competitive moat and backlog visibility justify closer examination. Scope diligence to focus on NWC normalisation trajectory and FCF conversion quality before committing capital. Current valuation leaves a thin margin of safety; any slippage in backlog-to-revenue conversion would reprice the growth premium sharply.</p></div>
+          <p class="dee-anon">Company name and specific references anonymised. Financial figures are illustrative of the analytical output, not for investment purposes.</p>
         </div>
       </div>
 
       <!-- BU TAB -->
       <div class="dee-tab-panel" id="tab-bu" role="tabpanel" aria-labelledby="tab-btn-bu">
         <div class="dee-body">
-          <p class="print-header">The Financial Analyst — Business Unit Performance Brief (Sample)</p>
+          <p class="print-header">The Financial Analyst · Business Unit Performance Brief (Sample)</p>
           <p class="dee-toc-label">Contents</p>
           <ul class="dee-toc-list">
             <li><strong>1. Unit description</strong></li>
@@ -920,10 +994,10 @@
             <div class="dee-metric"><p class="dee-metric-label">Adj. EBITA Margin</p><p class="dee-metric-value">21.8%</p><p class="dee-metric-sub">~flat organic vs prior year</p></div>
             <div class="dee-metric"><p class="dee-metric-label">Unit Backlog</p><p class="dee-metric-value">€21.3bn</p><p class="dee-metric-sub">+21% YoY · 7.7 months coverage</p></div>
           </div>
-          <div class="dee-qa"><p class="dee-q">Is this unit creating or destroying value?</p><p class="dee-a">Creating value. The unit generated adjusted EBITA of €7,235 million at a 21.8% margin in FY2025 — approximately 980 basis points above the Damodaran Electrical Equipment sector median of 12%. Applied against the sector WACC of 8% (euro-adjusted), the implied ROIC-WACC spread is strongly positive, confirming the unit as the Group's primary value-creation engine. Q1 2026 organic revenue growth of +12.8% confirms the trajectory is accelerating, not decelerating.</p></div>
-          <div class="dee-qa"><p class="dee-q">What does the external benchmark say?</p><p class="dee-a">The unit's 21.8% adjusted EBITA margin sits well above the Damodaran Electrical Equipment sector median of 12% and compares favourably to the closest large-cap peers. Revenue growth of +10.3% organic in FY2025, accelerating to +12.8% in Q1 2026, significantly outpaces the sector median and most direct competitors. The year-end backlog of €21.3 billion — up +21% year-on-year — provides multi-year revenue visibility that the peer group cannot match.</p></div>
+          <div class="dee-qa"><p class="dee-q">Is this unit creating or destroying value?</p><p class="dee-a">Creating value. The unit generated adjusted EBITA of €7,235 million at a 21.8% margin in FY2025, approximately 980 basis points above the Damodaran Electrical Equipment sector median of 12%. Applied against the sector WACC of 8% (euro-adjusted), the implied ROIC-WACC spread is strongly positive, confirming the unit as the Group's primary source of value creation. Q1 2026 organic revenue growth of +12.8% confirms the trajectory is accelerating.</p></div>
+          <div class="dee-qa"><p class="dee-q">What does the external benchmark say?</p><p class="dee-a">The unit's 21.8% adjusted EBITA margin sits well above the Damodaran Electrical Equipment sector median of 12% and compares favourably to the closest large-cap peers. Revenue growth of +10.3% organic in FY2025, accelerating to +12.8% in Q1 2026, significantly outpaces the sector median and most direct competitors. The year-end backlog of €21.3 billion (up +21% year-on-year) provides multi-year revenue visibility that the peer group cannot match.</p></div>
           <div class="dee-qa"><p class="dee-q">What is the capital allocation recommendation?</p><p class="dee-a">The unit's margin premium, growing backlog, and above-sector ROIC jointly justify accelerated capital allocation. The primary risk to the verdict is gross margin pressure from a Systems-versus-Products mix shift and raw material and tariff headwinds; H1 2025 saw a -70 basis point margin step-down that was subsequently recovered in H2. Review triggers are set at an adjusted EBITA margin below 21.0% in H1 2026 or backlog growth decelerating below +10% year-on-year at year-end 2026.</p></div>
-          <div class="dee-rec"><p class="dee-rec-label">Performance verdict</p><p class="dee-rec-text"><strong>GROW</strong> — accelerate capital allocation to this unit. The unit is compounding returns well above sector cost of capital on a €21.3 billion backlog growing at +21% year-on-year. Margin is the dominant value-creation lever; monitor H1 2026 adjusted EBITA margin and backlog conversion rate as primary review triggers.</p></div>
+          <div class="dee-rec"><p class="dee-rec-label">Performance verdict</p><p class="dee-rec-text"><strong>GROW</strong>: accelerate capital allocation to this unit. The unit is compounding returns well above sector cost of capital on a €21.3 billion backlog growing at +21% year-on-year. Margin is the dominant value-creation lever; monitor H1 2026 adjusted EBITA margin and backlog conversion rate as primary review triggers.</p></div>
           <p class="dee-anon">Unit name and parent company anonymised. Sector benchmarks sourced from Damodaran public datasets. Not for internal reporting purposes.</p>
         </div>
       </div>
@@ -933,8 +1007,11 @@
 </section>
 
 <!-- CLOSING -->
-<section class="closing">
-  <p>The Financial Analyst was designed, built, and tested by Andreas Cavalca Neumann as a fully operational demonstration that agentic analysis — applied with the right frameworks and the right restraint — can remove friction from executive decisions.</p>
+<section class="closing reveal">
+  <div class="closing-brand">
+    <img src="logo-mark.png" alt="" width="28" height="28" class="closing-mark">
+    <p>The Financial Analyst was designed, built, and tested by Andreas Cavalca Neumann as a fully operational demonstration that agentic analysis, applied with the right frameworks and the right restraint, can remove friction from executive decisions.</p>
+  </div>
   <a class="closing-link" href="https://www.linkedin.com/in/andreas-cavalca-neumann">Connect on LinkedIn →</a>
 </section>
 
@@ -955,6 +1032,17 @@ function showTab(id, btn) {
 function exportBrief() {
   window.print();
 }
+
+// Scroll-triggered reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // Nav scroll elevation
 window.addEventListener('scroll', () => {
