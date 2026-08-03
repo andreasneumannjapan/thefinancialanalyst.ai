@@ -278,6 +278,16 @@
     font-weight: 600;
     margin-bottom: 0.6rem;
   }
+  .inline-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-light);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s;
+  }
+  .inline-link:hover {
+    text-decoration-color: var(--ink);
+  }
 
   /* Pipeline diagram */
   .pipeline {
@@ -821,8 +831,7 @@
       </div>
       <div class="arch-block">
         <p class="arch-block-label">Why build it this way</p>
-        <p>Most agentic AI projects fail on vague scope, missing checkpoints, or ambiguous decision rules, not on model quality. That's the reason for three narrow domains instead of a general-purpose assistant, one deliberate human checkpoint, and fixed analytical frameworks instead of open-ended prompts. MIT Sloan researcher Andrew Lo points to building AI systems that are accountable by design as the main unresolved barrier to wider AI adoption in finance: the human checkpoint above exists for that reason.</p>
-        <p>The architecture was designed with CFO decisions in mind, and building it end-to-end was a deliberate choice, not a necessity. A finance executive doesn't need to write code, but does need to understand the architecture at the level of design: enough to commission analytical infrastructure well, evaluate whether the output is good enough to act on, and hold a team accountable for what it produces. That's what I practise here: I treat AI-powered analysis as an executive design problem.</p>
+        <p>Most agentic AI projects fail not on model quality but on the wrong kind of task: MIT research finds that 95% of generative AI investment delivers no measurable return, largely where automation is aimed at the decision itself rather than the well-defined, repeatable work underneath it. This system is built on the opposite premise: three narrow domains and fixed analytical frameworks keep automation inside well-defined, repeatable work, while one deliberate human checkpoint keeps actual decision-making, and the trust to act on it, with the person accountable for it. MIT Sloan researcher <a href="https://mitsloan.mit.edu/ideas-made-to-matter/here-are-ai-developments-finance-pros-should-be-tracking" class="inline-link" target="_blank" rel="noopener">Andrew Lo</a> points to building AI systems that are accountable by design as the main unresolved barrier to wider AI adoption in finance: that checkpoint exists for that reason.</p>
       </div>
     </div>
   </div>
@@ -1010,7 +1019,7 @@
 <section class="closing reveal">
   <div class="closing-brand">
     <img src="logo-mark.png" alt="" width="28" height="28" class="closing-mark">
-    <p>The Financial Analyst was designed, built, and tested by Andreas Cavalca Neumann as a fully operational demonstration that agentic analysis, applied with the right frameworks and the right restraint, can remove friction from executive decisions.</p>
+    <p>The Financial Analyst was designed, built, and tested by Andreas Cavalca Neumann as a fully operational demonstration that agentic analysis, applied with the right frameworks and the right restraint, earns the trust a CFO needs to act on it.</p>
   </div>
   <a class="closing-link" href="https://www.linkedin.com/in/andreas-cavalca-neumann">Connect on LinkedIn →</a>
 </section>
