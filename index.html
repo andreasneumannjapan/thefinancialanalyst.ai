@@ -647,6 +647,49 @@
     transform: translateY(0);
   }
 
+
+  /* MANDATE */
+  .mandate-section {
+    padding: 0 3rem 8rem;
+    background: var(--surface);
+  }
+  .mandate-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 6rem;
+    border-top: 0.5px solid var(--rule);
+  }
+  .mandate-header { margin-bottom: 2rem; }
+  .mandate-header h2 {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .mandate-body { max-width: 680px; }
+  .mandate-body p {
+    font-size: 15px;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .mandate-body p:last-child { margin-bottom: 0; }
+  .mandate-body p + .mandate-list { margin-top: -0.5rem; }
+  .mandate-list {
+    list-style: none;
+    border-left: 2px solid var(--accent-muted);
+    padding-left: 1.25rem;
+    margin: 0 0 1.5rem;
+  }
+  .mandate-list li {
+    font-size: 15px;
+    color: var(--ink-secondary);
+    line-height: 1.8;
+    padding: 0.3rem 0;
+  }
+
   /* RESPONSIVE */
   @media (max-width: 700px) {
     nav { padding: 1rem 1.25rem; }
@@ -657,6 +700,8 @@
     .architecture { padding: 4rem 1.25rem; }
     .tools-section { padding: 4.5rem 1.25rem; }
     .sample-outputs { padding: 4.5rem 1.25rem; }
+    .mandate-section { padding: 0 1.25rem 4.5rem; }
+    .mandate-inner { padding-top: 4rem; }
     .closing { padding: 3rem 1.25rem; }
     .framing, .arch-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .tool-card { grid-template-columns: 1fr; gap: 1rem; }
@@ -671,7 +716,7 @@
   /* PRINT STYLES: scopes export to active brief only */
   @media print {
     nav, .hero, .hero-intro, .divider, .framing, .tools-section, .architecture,
-    .sample-header, .dee-header, .dee-tab-bar, .closing, .dee-anon { display: none !important; }
+    .sample-header, .mandate-section, .dee-header, .dee-tab-bar, .closing, .dee-anon { display: none !important; }
     body { background: white; font-size: 13px; }
     .sample-outputs { padding: 0; }
     .sample-inner { max-width: 100%; }
@@ -707,6 +752,7 @@
     <li><a href="#tools">The Tools</a></li>
     <li><a href="#how">The Workflow</a></li>
     <li><a href="#sample">The Outputs</a></li>
+    <li><a href="#mandate">The Mandate</a></li>
   </ul>
 </nav>
 
@@ -832,7 +878,7 @@
       </div>
       <div class="arch-block">
         <p class="arch-block-label">Why build it this way</p>
-        <p>Most agentic AI projects fail not on model quality but on the wrong kind of task: MIT research finds that 95% of generative AI investment delivers no measurable return, largely where automation is aimed at the decision itself rather than the well-defined, repeatable work underneath it. This system is built on the opposite premise: three narrow domains and fixed analytical frameworks keep automation inside well-defined, repeatable work, while one deliberate human checkpoint keeps actual decision-making, and the trust to act on it, with the person accountable for it. MIT Sloan researcher <a href="https://mitsloan.mit.edu/ideas-made-to-matter/here-are-ai-developments-finance-pros-should-be-tracking" class="inline-link" target="_blank" rel="noopener">Andrew Lo</a> points to building AI systems that are accountable by design as the main unresolved barrier to wider AI adoption in finance: that checkpoint exists for that reason.</p>
+        <p>Most agentic AI projects fail not on model quality but on the wrong kind of task: MIT research suggests most organisations have yet to see a measurable return on generative AI, largely where automation is aimed at the decision itself rather than the well-defined, repeatable work underneath it. This system is built on the opposite premise: three narrow domains and fixed analytical frameworks keep automation inside well-defined, repeatable work, while one deliberate human checkpoint keeps actual decision-making, and the trust to act on it, with the person accountable for it. MIT Sloan researcher <a href="https://mitsloan.mit.edu/ideas-made-to-matter/here-are-ai-developments-finance-pros-should-be-tracking" class="inline-link" target="_blank" rel="noopener">Andrew Lo</a> points to building AI systems that are accountable by design as the main unresolved barrier to wider AI adoption in finance: that checkpoint exists for that reason.</p>
       </div>
     </div>
   </div>
@@ -883,14 +929,14 @@
     <div class="sample-header">
       <p class="section-label">The Outputs</p>
       <h2>What the workflow produces.</h2>
-      <p>Three decision-ready briefs, one per CFO domain. Company references anonymised.</p>
+      <p>Three decision-ready briefs, one per CFO domain. Company names removed.</p>
     </div>
 
     <div class="doc-excerpt-embed">
       <div class="dee-header">
         <div class="dee-header-left">
           <span class="dee-header-title">Sample Outputs · The Financial Analyst</span>
-          <span class="dee-header-tag">Anonymised · For illustration only</span>
+          <span class="dee-header-tag">Company names removed · For illustration only</span>
         </div>
         <button class="dee-export-btn" onclick="exportBrief()" aria-label="Export active brief as PDF">
           <svg viewBox="0 0 12 12" aria-hidden="true">
@@ -936,7 +982,7 @@
           <div class="dee-qa"><p class="dee-q">What are the main risks?</p><p class="dee-a">First, the acquisition of several manufacturing facilities from a struggling supplier in late 2025 has already increased costs and triggered over €700 million in write-downs, with full cost normalisation years away. Second, the single-aisle production ramp-up (the most profitable product line) is being held back by engine shortages, capping near-term revenue growth. Third, a large portion of revenue is earned in US dollars while most costs are in euros, meaning a strengthening euro directly reduces the value of each aircraft sold.</p></div>
           <div class="dee-qa"><p class="dee-q">What is our view?</p><p class="dee-a">A strong credit supported by an unmatched order backlog of €619 billion and a net cash balance sheet. This view would need reassessment if supply-chain integration costs escalate materially beyond current provisions or if the production ramp-up suffers a sustained setback that erodes free cash flow below €3 billion annually.</p></div>
           <div class="dee-rec"><p class="dee-rec-label">Recommendation: Senior debt</p><p class="dee-rec-text"><strong>HOLD</strong> at current spread levels. A net cash consolidated balance sheet (net debt/EBITDA of -0.30×), a €619 billion order backlog representing approximately 8.4 years of revenue visibility, and gross interest coverage exceeding 13× support the current position. The Hold rather than Buy reflects open supply-chain integration risk and USD/EUR headwinds that limit the case for incremental exposure in the 7–10 year tenor.</p></div>
-          <p class="dee-anon">Company name and specific transaction references anonymised. External agency ratings were not available in the source documents: that reflects honest sourcing practice, not an analytical gap. Financial figures are illustrative of the analytical output, not for investment purposes.</p>
+          <p class="dee-anon">Company name and specific transaction references removed. External agency ratings were not available in the source documents: that reflects honest sourcing practice, not an analytical gap. Financial figures are illustrative of the analytical output, not for investment purposes.</p>
         </div>
       </div>
 
@@ -973,7 +1019,7 @@
           <div class="dee-qa"><p class="dee-q">What is the right engagement structure?</p><p class="dee-a">The central tension is valuation: the stock trades at 22× EV/EBITDA and 45× trailing P/E (multiples that embed years of uninterrupted defence-cycle execution) while the business carries €383 million in net debt and a cash conversion rate that has structurally undershot management's 80% benchmark (three-year average: 54.6%). Equity entry requires conviction on the NATO spending supercycle and flawless system-integrator execution. M&amp;A engagement at the segment level warrants deeper diligence on NWC dynamics before committing capital.</p></div>
           <div class="dee-qa"><p class="dee-q">Key risks before committing</p><p class="dee-a">FCF conversion deficit: the business earns well but converts to cash slowly due to NWC intensity at 25.2% of revenue. Segment-level cracks visible: the Marine &amp; Industry margin collapsed to 6.7% in Q1 2026 on a single supplier shortage. A high-growth defence valuation leaves no room for execution missteps; beta of 2.12 versus a sector average of ~1.26 reflects the market's own assessment of that fragility.</p></div>
           <div class="dee-rec"><p class="dee-rec-label">Preliminary view</p><p class="dee-rec-text"><strong>PROCEED TO DILIGENCE</strong>: the competitive moat and backlog visibility justify closer examination. Scope diligence to focus on NWC normalisation trajectory and FCF conversion quality before committing capital. Current valuation leaves a thin margin of safety; any slippage in backlog-to-revenue conversion would reprice the growth premium sharply.</p></div>
-          <p class="dee-anon">Company name and specific references anonymised. Financial figures are illustrative of the analytical output, not for investment purposes.</p>
+          <p class="dee-anon">Company name and specific references removed. Financial figures are illustrative of the analytical output, not for investment purposes.</p>
         </div>
       </div>
 
@@ -1008,10 +1054,30 @@
           <div class="dee-qa"><p class="dee-q">What does the external benchmark say?</p><p class="dee-a">The unit's 21.8% adjusted EBITA margin sits well above the Damodaran Electrical Equipment sector median of 12% and compares favourably to the closest large-cap peers. Revenue growth of +10.3% organic in FY2025, accelerating to +12.8% in Q1 2026, significantly outpaces the sector median and most direct competitors. The year-end backlog of €21.3 billion (up +21% year-on-year) provides multi-year revenue visibility that the peer group cannot match.</p></div>
           <div class="dee-qa"><p class="dee-q">What is the capital allocation recommendation?</p><p class="dee-a">The unit's margin premium, growing backlog, and above-sector ROIC jointly justify accelerated capital allocation. The primary risk to the verdict is gross margin pressure from a Systems-versus-Products mix shift and raw material and tariff headwinds; H1 2025 saw a -70 basis point margin step-down that was subsequently recovered in H2. Review triggers are set at an adjusted EBITA margin below 21.0% in H1 2026 or backlog growth decelerating below +10% year-on-year at year-end 2026.</p></div>
           <div class="dee-rec"><p class="dee-rec-label">Performance verdict</p><p class="dee-rec-text"><strong>GROW</strong>: accelerate capital allocation to this unit. The unit is compounding returns well above sector cost of capital on a €21.3 billion backlog growing at +21% year-on-year. Margin is the dominant value-creation lever; monitor H1 2026 adjusted EBITA margin and backlog conversion rate as primary review triggers.</p></div>
-          <p class="dee-anon">Unit name and parent company anonymised. Sector benchmarks sourced from Damodaran public datasets. Not for internal reporting purposes.</p>
+          <p class="dee-anon">Unit name and parent company removed. Sector benchmarks sourced from Damodaran public datasets. Not for internal reporting purposes.</p>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- MANDATE -->
+<section class="mandate-section reveal" id="mandate">
+  <div class="mandate-inner">
+    <div class="mandate-header">
+      <p class="section-label">The Mandate</p>
+      <h2>AI in finance is a leadership question first. And a technology question only second.</h2>
+    </div>
+    <div class="mandate-body">
+      <p>Finance teams can now automate days of analysis with tools they build themselves. The harder part is what the CFO does next. If the time saved is reported as headcount, and subsequently reduced, the people who built the tool stop building. If it is kept quiet, the function falls behind.</p>
+      <p>The CFO&rsquo;s task is to frame it on three terms:</p>
+      <ul class="mandate-list">
+        <li>Capacity: FTEs moved from assembling data to acting on it, not FTEs removed from the budget.</li>
+        <li>Control: clear rules on what the machine prepares and what a person signs off.</li>
+        <li>Trust: numbers the board can rely on, because every source and step can be traced.</li>
+      </ul>
+      <p>The Financial Analyst shows what that looks like in practice. Three analyses a CFO relies on (credit exposure, investment screening and business unit performance) run end to end on public data. The CFO chooses which documents go in and owns the conclusion. Analysis that took days takes hours, and the judgment stays with the person accountable for it.</p>
     </div>
   </div>
 </section>
