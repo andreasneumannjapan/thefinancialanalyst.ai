@@ -760,13 +760,13 @@
 <!-- HERO -->
 <section class="hero reveal">
   <img src="logo-mark.png" alt="The Financial Analyst" class="hero-logo">
-  <h1>One pipeline.<br><em>Three decisions.</em></h1>
-  <p class="hero-sub">Agentic analysis built to remove friction from the decisions that matter most to a CFO: credit exposure, capital allocation, and portfolio performance.</p>
+  <h1>One pipeline.<br><em>Four decisions.</em></h1>
+  <p class="hero-sub">Agentic analysis built to remove friction from the decisions that matter most to a CFO: credit exposure, capital allocation, portfolio performance, and risk capacity.</p>
 </section>
 
 <!-- HERO INTRO -->
 <section class="hero-intro reveal">
-  <p>Corporate finance teams face a structural tension: the decisions that matter most (credit exposure, capital allocation, portfolio performance) demand analysis that's both fast and rigorous. Automating the existing 5-day process would still take days. The Financial Analyst demonstrates what replacing that process could look like, delivering the same decision-ready analysis in 2 hours.</p>
+  <p>Corporate finance teams face a structural tension: the decisions that matter most (credit exposure, capital allocation, portfolio performance, risk capacity) demand analysis that's both fast and rigorous. Automating the existing 5-day process would still take days. The Financial Analyst demonstrates what replacing that process could look like, delivering the same decision-ready analysis in 2 hours.</p>
   <p>This page is a working demonstration: an agent, not a chatbot or a dashboard, built for decision-making in corporate finance. Given a goal such as a credit review or an investment screen, it plans and executes the full analysis itself, rather than waiting for the next prompt or reporting on work already done.</p>
 </section>
 
@@ -778,7 +778,7 @@
     <p class="framing-label">The binding constraint is the friction that sits between asking the right questions<br>and finding relevant answers.</p>
   </div>
   <div class="framing-body">
-    <p>Data access usually isn't the constraint: most of what a CFO needs is already public, in filings and market feeds. The Financial Analyst concentrates and systematises the analysis the CFO's judgment relies on, producing decision briefs across three domains from a single, consistent workflow. It doesn't replace that judgment.</p>
+    <p>Data access usually isn't the constraint: most of what a CFO needs is already public, in filings and market feeds. The Financial Analyst concentrates and systematises the analysis the CFO's judgment relies on, producing decision briefs across four domains from a single, consistent workflow. It doesn't replace that judgment.</p>
   </div>
 </section>
 
@@ -786,8 +786,8 @@
 <section class="tools-section reveal" id="tools">
   <div class="tools-inner">
     <div class="tools-header">
-      <p class="section-label">Three CFO Domains</p>
-      <h2>One workflow. Three decision-ready outputs.</h2>
+      <p class="section-label">Four CFO Domains</p>
+      <h2>One workflow. Four decision-ready outputs.</h2>
     </div>
 
     <!-- Card 1: Credit Risk -->
@@ -846,27 +846,50 @@
       <div class="tool-content">
         <div class="tool-block">
           <p class="tool-block-label">The Problem</p>
-          <p>A CFO reviewing a portfolio of business units needs to answer two questions that internal reporting rarely surfaces cleanly: first, which units are creating value above their cost of capital and which are destroying it, and second, what does the external sector benchmark say about whether that is structural or recoverable? Most BU reviews answer the first question with precision and the second not at all, which makes it hard to distinguish units that need fixing from units that should be exited.</p>
+          <p>A CFO reviewing a portfolio of business units needs to answer two questions that internal reporting rarely surfaces cleanly: which units are creating value above their cost of capital, and is that structural or recoverable? Most BU reviews compare actuals with a budget nobody outside the unit can test, and measure returns on capital that an acquisition has just doubled. Both make it hard to distinguish units that need fixing from units that should be exited.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">What It Produces</p>
-          <p>A business unit brief combining internal financial performance with external sector benchmarking: margin position, ROIC versus WACC, and peer comparison. The brief tells decision-makers whether each unit is performing in line with its strategic track, with the internal and external analysis sitting in the same document against the same standard.</p>
+          <p>A business unit brief built the way FP&amp;A works: performance against management's own published guidance and its track record of delivering it; a year-on-year bridge separating organic growth from currency and portfolio effects; ROIC against sector WACC on the capital the unit must now earn on; and a driver-based outlook with base, upside and downside cases and the sensitivities that show which lever moves value most. It closes with a Grow / Maintain / Harvest / Exit verdict and testable review triggers.</p>
         </div>
         <div class="tool-block">
           <p class="tool-block-label">The Standard It Applies</p>
-          <p>Sector data for margins, multiples, WACC, and beta: the external reference point that turns an internal performance view into a value creation assessment.</p>
+          <p>Every figure computed in code from sourced filings, never estimated; sector margins, multiples and WACC as the external reference point; and a rule-based verdict screen that the analysis must start from and can only overturn with cited evidence.</p>
         </div>
       </div>
     </div>
 
-  </div>
+    <!-- Card 4: Enterprise Risk -->
+    <div class="tool-card reveal" style="transition-delay: 0.24s;">
+      <div class="tool-meta">
+        <p class="tool-number">04</p>
+        <p class="tool-name">Enterprise Risk</p>
+        <p class="tool-domain">Board Risk Committee &amp; CFO</p>
+      </div>
+      <div class="tool-content">
+        <div class="tool-block">
+          <p class="tool-block-label">The Problem</p>
+          <p>Most risk reports rank risks in words but rarely say whether the company could absorb them together. Market-risk disclosures cover hedged instruments and look reassuringly small, while the economic exposure (translation of foreign earnings, pension funding, the balance-sheet weight of recent acquisitions) sits elsewhere in the report. A Board risk committee needs one answer: under a severe but plausible scenario, does the company stay within its own limits?</p>
+        </div>
+        <div class="tool-block">
+          <p class="tool-block-label">What It Produces</p>
+          <p>An enterprise risk brief that sets the company's own risk ranking against an independent register scored on anchored scales, adds the material risks the report under-weights, and quantifies financial exposures at standard stresses. A combined stress scenario, built from the company's top-ranked risk, is then tested against leverage targets, liquidity and equity. The verdict is a risk posture (within appetite, stretched or beyond capacity), with COSO ERM maturity scores, priority actions and key risk indicators.</p>
+        </div>
+        <div class="tool-block">
+          <p class="tool-block-label">The Standard It Applies</p>
+          <p>COSO ERM and ISO 31000 as the framework; the company's own disclosed sensitivities, latest balance sheet and stated leverage target as the evidence; and a clear line between what the company says about its risks and what the evidence shows.</p>
+        </div>
+      </div>
+    </div>
+
+    </div>
 </section>
 
 <!-- ARCHITECTURE -->
 <section class="architecture reveal" id="how">
   <div class="arch-header">
     <div>
-      <p class="arch-label-heading">One workflow.<br>Consistent inputs.<br>Three analytical outputs.</p>
+      <p class="arch-label-heading">One workflow.<br>Consistent inputs.<br>Four analytical outputs.</p>
     </div>
     <div class="arch-body">
       <div class="arch-block">
@@ -878,8 +901,12 @@
         <p>The human review step at document selection is deliberate. Investor relations pages vary widely by company; automated selection would occasionally pull the wrong documents into a high-stakes analytical output. Keeping a human in the loop at this step is quality control by design: a considered judgement about where autonomous execution is appropriate and where it isn't.</p>
       </div>
       <div class="arch-block">
+        <p class="arch-block-label">Computed, not generated</p>
+        <p>The reasoning engine reads and extracts; it does not calculate. Every figure in a brief's tables (bridges, returns, scenarios, stress tests) is computed in code from figures extracted with page citations, and saved as an audit file alongside the brief. Each verdict starts from a published rule-based screen; the analysis can depart from it only with cited evidence and must name the alternative it rejected. Independent cross-checks against market data catch extraction errors before they reach a conclusion.</p>
+      </div>
+      <div class="arch-block">
         <p class="arch-block-label">Why build it this way</p>
-        <p>Most agentic AI projects fail not on model quality but on the wrong kind of task: MIT research suggests most organisations have yet to see a measurable return on generative AI, largely where automation is aimed at the decision itself rather than the well-defined, repeatable work underneath it. This system is built on the opposite premise: three narrow domains and fixed analytical frameworks keep automation inside well-defined, repeatable work, while one deliberate human checkpoint keeps actual decision-making, and the trust to act on it, with the person accountable for it. MIT Sloan researcher <a href="https://mitsloan.mit.edu/ideas-made-to-matter/here-are-ai-developments-finance-pros-should-be-tracking" class="inline-link" target="_blank" rel="noopener">Andrew Lo</a> points to building AI systems that are accountable by design as the main unresolved barrier to wider AI adoption in finance: that checkpoint exists for that reason.</p>
+        <p>Most agentic AI projects fail not on model quality but on the wrong kind of task: MIT research suggests most organisations have yet to see a measurable return on generative AI, largely where automation is aimed at the decision itself rather than the well-defined, repeatable work underneath it. This system is built on the opposite premise: four narrow domains and fixed analytical frameworks keep automation inside well-defined, repeatable work, while one deliberate human checkpoint keeps actual decision-making, and the trust to act on it, with the person accountable for it. MIT Sloan researcher <a href="https://mitsloan.mit.edu/ideas-made-to-matter/here-are-ai-developments-finance-pros-should-be-tracking" class="inline-link" target="_blank" rel="noopener">Andrew Lo</a> points to building AI systems that are accountable by design as the main unresolved barrier to wider AI adoption in finance: that checkpoint exists for that reason.</p>
       </div>
     </div>
   </div>
@@ -888,9 +915,9 @@
     <div class="pipeline-row">
       <span class="pipeline-stage-label">Data Sources</span>
       <div class="pipeline-nodes">
-        <span class="pipeline-node" data-connects="output-credit output-investment output-bu">Market API Feeds</span>
+        <span class="pipeline-node" data-connects="output-credit output-investment output-bu output-erm">Market API Feeds</span>
         <span class="pipeline-node" data-connects="output-investment output-bu">Sector Benchmarks</span>
-        <span class="pipeline-node" data-connects="output-credit output-investment output-bu">IR Filings</span>
+        <span class="pipeline-node" data-connects="output-credit output-investment output-bu output-erm">IR Filings</span>
       </div>
     </div>
     <div class="pipeline-divider"></div>
@@ -900,15 +927,18 @@
         <span class="pipeline-node" data-connects="output-bu">Sector Margins</span>
         <span class="pipeline-node" data-connects="output-investment output-bu">Peer Multiples</span>
         <span class="pipeline-node" data-connects="output-credit output-investment output-bu">WACC / Beta / CRP</span>
+        <span class="pipeline-node" data-connects="output-erm">Risk Sensitivities</span>
       </div>
     </div>
     <div class="pipeline-divider"></div>
     <div class="pipeline-row">
       <span class="pipeline-stage-label">Analytical Design</span>
       <div class="pipeline-nodes">
-        <span class="pipeline-node" data-connects="output-credit output-investment output-bu">Domain Prompts</span>
-        <span class="pipeline-node" data-connects="output-credit output-investment output-bu">Analytical Frameworks</span>
-        <span class="pipeline-node" data-connects="output-credit output-investment output-bu">Reasoning Engine</span>
+        <span class="pipeline-node" data-connects="output-credit output-investment output-bu output-erm">Domain Prompts</span>
+        <span class="pipeline-node" data-connects="output-credit output-investment output-bu output-erm">Analytical Frameworks</span>
+        <span class="pipeline-node" data-connects="output-credit output-investment output-bu output-erm">Reasoning Engine</span>
+        <span class="pipeline-node" data-connects="output-bu output-erm">Computed Metrics</span>
+        <span class="pipeline-node" data-connects="output-bu output-erm">Rule-based Screens</span>
       </div>
     </div>
     <div class="pipeline-divider"></div>
@@ -918,6 +948,7 @@
         <span class="pipeline-node output" id="output-credit">Credit Brief</span>
         <span class="pipeline-node output" id="output-investment">Investment Brief</span>
         <span class="pipeline-node output" id="output-bu">BU Brief</span>
+        <span class="pipeline-node output" id="output-erm">ERM Brief</span>
       </div>
     </div>
   </div>
@@ -930,7 +961,7 @@
     <div class="sample-header">
       <p class="section-label">The Outputs</p>
       <h2>What the workflow produces.</h2>
-      <p>Three decision-ready briefs, one per CFO domain. Company names removed.</p>
+      <p>Four decision-ready briefs, one per CFO domain. Company names removed.</p>
     </div>
 
     <div class="doc-excerpt-embed">
@@ -951,6 +982,7 @@
         <button class="dee-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-credit" id="tab-btn-credit" onclick="showTab('credit', this)">01 · Credit Risk</button>
         <button class="dee-tab-btn" role="tab" aria-selected="false" aria-controls="tab-investment" id="tab-btn-investment" onclick="showTab('investment', this)">02 · Investment Screening</button>
         <button class="dee-tab-btn" role="tab" aria-selected="false" aria-controls="tab-bu" id="tab-btn-bu" onclick="showTab('bu', this)">03 · Business Unit</button>
+        <button class="dee-tab-btn" role="tab" aria-selected="false" aria-controls="tab-erm" id="tab-btn-erm" onclick="showTab('erm', this)">04 · Enterprise Risk</button>
       </div>
 
       <!-- CREDIT TAB -->
@@ -1030,36 +1062,68 @@
           <p class="print-header">The Financial Analyst · Business Unit Performance Brief (Sample)</p>
           <p class="dee-toc-label">Contents</p>
           <ul class="dee-toc-list">
-            <li><strong>1. Unit description</strong></li>
-            <li><strong>2. Financial KPIs</strong></li>
-            <li class="dee-sub">Revenue &nbsp;·&nbsp; Adjusted EBITA &nbsp;·&nbsp; Margin &nbsp;·&nbsp; Backlog &nbsp;·&nbsp; H1/H2 split</li>
-            <li><strong>3. Operational KPIs</strong></li>
-            <li class="dee-sub">Backlog coverage &nbsp;·&nbsp; Systems growth &nbsp;·&nbsp; Digital flywheel share &nbsp;·&nbsp; Services growth &nbsp;·&nbsp; Regional organic growth</li>
-            <li><strong>4. KPI observations</strong></li>
-            <li><strong>5. Peer benchmarking</strong></li>
-            <li class="dee-sub">5.1 Peer benchmarking table &nbsp;·&nbsp; 5.2 Benchmarking observations</li>
-            <li><strong>6. Value creation assessment</strong></li>
-            <li class="dee-sub">6.1 ROIC vs WACC &nbsp;·&nbsp; 6.2 Value creation narrative &nbsp;·&nbsp; 6.3 Trend</li>
-            <li><strong>7. Lifecycle positioning &amp; risks</strong></li>
-            <li><strong>8. Capital allocation recommendation</strong></li>
-            <li class="dee-sub">8.1 Verdict &nbsp;·&nbsp; 8.2 Rationale &nbsp;·&nbsp; 8.3 Conditions and monitoring</li>
+            <li><strong>1. Unit snapshot</strong></li>
+            <li><strong>2. Performance vs guidance and prior year</strong></li>
+            <li class="dee-sub">2.1 Financial KPIs &nbsp;·&nbsp; 2.2 Operational KPIs &nbsp;·&nbsp; 2.3 Guidance and track record &nbsp;·&nbsp; 2.4 Revenue and margin bridge &nbsp;·&nbsp; 2.5 Key observations</li>
+            <li><strong>3. External benchmarking</strong></li>
+            <li class="dee-sub">3.1 Peer benchmarking table &nbsp;·&nbsp; 3.2 Benchmarking observations</li>
+            <li><strong>4. Value creation assessment</strong></li>
+            <li class="dee-sub">4.1 ROIC vs WACC &nbsp;·&nbsp; 4.2 Value creation narrative &nbsp;·&nbsp; 4.3 Trend &nbsp;·&nbsp; 4.4 Driver-based outlook</li>
+            <li><strong>5. Strategic position and risks</strong></li>
+            <li class="dee-sub">5.1 Lifecycle positioning &nbsp;·&nbsp; 5.2 Key opportunities &nbsp;·&nbsp; 5.3 Key risks</li>
+            <li><strong>6. Capital allocation recommendation</strong></li>
+            <li class="dee-sub">Verdict and screen &nbsp;·&nbsp; Rationale &nbsp;·&nbsp; Conditions and monitoring</li>
           </ul>
           <hr class="dee-divider">
           <p class="dee-exec-title">Executive Summary</p>
           <div class="dee-metrics">
-            <div class="dee-metric"><p class="dee-metric-label">Unit Revenue (FY2025)</p><p class="dee-metric-value">€33.1bn</p><p class="dee-metric-sub">+10.3% organic · 82% of Group</p></div>
-            <div class="dee-metric"><p class="dee-metric-label">Adj. EBITA Margin</p><p class="dee-metric-value">21.8%</p><p class="dee-metric-sub">~flat organic vs prior year</p></div>
-            <div class="dee-metric"><p class="dee-metric-label">Unit Backlog</p><p class="dee-metric-value">€21.3bn</p><p class="dee-metric-sub">+21% YoY · 7.7 months coverage</p></div>
+            <div class="dee-metric"><p class="dee-metric-label">Unit Revenue (FY2025)</p><p class="dee-metric-value">€17.8bn</p><p class="dee-metric-sub">−4% comparable · orders +8%</p></div>
+            <div class="dee-metric"><p class="dee-metric-label">Profit Margin</p><p class="dee-metric-value">18.1%</p><p class="dee-metric-sub">H1 FY2026 · from 14.9% in FY2025</p></div>
+            <div class="dee-metric"><p class="dee-metric-label">ROIC − WACC</p><p class="dee-metric-value">+0.9pp</p><p class="dee-metric-sub">On closing capital · base case +3.6pp</p></div>
           </div>
-          <div class="dee-qa"><p class="dee-q">Is this unit creating or destroying value?</p><p class="dee-a">Creating value. The unit generated adjusted EBITA of €7,235 million at a 21.8% margin in FY2025, approximately 980 basis points above the Damodaran Electrical Equipment sector median of 12%. Applied against the sector WACC of 8% (euro-adjusted), the implied ROIC-WACC spread is strongly positive, confirming the unit as the Group's primary source of value creation. Q1 2026 organic revenue growth of +12.8% confirms the trajectory is accelerating.</p></div>
-          <div class="dee-qa"><p class="dee-q">What does the external benchmark say?</p><p class="dee-a">The unit's 21.8% adjusted EBITA margin sits well above the Damodaran Electrical Equipment sector median of 12% and compares favourably to the closest large-cap peers. Revenue growth of +10.3% organic in FY2025, accelerating to +12.8% in Q1 2026, significantly outpaces the sector median and most direct competitors. The year-end backlog of €21.3 billion (up +21% year-on-year) provides multi-year revenue visibility that the peer group cannot match.</p></div>
-          <div class="dee-qa"><p class="dee-q">What is the capital allocation recommendation?</p><p class="dee-a">The unit's margin premium, growing backlog, and above-sector ROIC jointly justify accelerated capital allocation. The primary risk to the verdict is gross margin pressure from a Systems-versus-Products mix shift and raw material and tariff headwinds; H1 2025 saw a -70 basis point margin step-down that was subsequently recovered in H2. Review triggers are set at an adjusted EBITA margin below 21.0% in H1 2026 or backlog growth decelerating below +10% year-on-year at year-end 2026.</p></div>
-          <div class="dee-rec"><p class="dee-rec-label">Performance verdict</p><p class="dee-rec-text"><strong>GROW</strong>: accelerate capital allocation to this unit. The unit is compounding returns well above sector cost of capital on a €21.3 billion backlog growing at +21% year-on-year. Margin is the dominant value-creation lever; monitor H1 2026 adjusted EBITA margin and backlog conversion rate as primary review triggers.</p></div>
-          <p class="dee-anon">Unit name and parent company removed. Sector benchmarks sourced from Damodaran public datasets. Not for internal reporting purposes.</p>
+          <div class="dee-qa"><p class="dee-q">Is this unit creating or destroying value?</p><p class="dee-a">Creating, but only just. Two software acquisitions more than doubled the unit's capital employed in a single year, to €22.9 billion. Measured on average capital, the spread over the 8% sector WACC looks comfortable at +4.2pp; measured on the capital the unit must now earn on, it is +0.9pp. The brief uses the second figure, because that is the return the group is actually being offered going forward.</p></div>
+          <div class="dee-qa"><p class="dee-q">Is management's guidance credible?</p><p class="dee-a">The current-year outlook, raised mid-year to 7–10% comparable growth and a 17–19% margin, is on track: the first half delivered 9% and 18.1%. The unit's own prior-year guidance is not in the documents analysed, so the brief declines to infer a track record from group-level targets and gives the ranges modest weight.</p></div>
+          <div class="dee-qa"><p class="dee-q">What moves value most?</p><p class="dee-a">Margin, by a wide margin. Each percentage point of margin moves the spread by 0.6pp; each point of revenue growth barely moves it. Integration costs from the acquisitions are still depressing margin, which makes cost discipline and software mix, both within management's control, the levers that decide whether the acquired capital earns its keep.</p></div>
+          <div class="dee-rec"><p class="dee-rec-label">Capital allocation verdict</p><p class="dee-rec-text"><strong>MAINTAIN</strong>: the closing-capital spread of +0.9pp sits below the brief's 2pp screening threshold, and the downside case narrows it to +1.4pp. Rejected alternative: GROW, because recovering margins and raised guidance do not yet show that the acquired capital earns above its cost. Review triggers: closing-capital spread at or below the downside case, quarterly margin below the guidance floor, and software growth falling out of double digits.</p></div>
+          <p class="dee-anon">Unit name, parent company and acquisitions removed. All figures computed from the parent's published filings; sector benchmarks from Damodaran public datasets. Illustrative of the analytical output, not for investment purposes.</p>
         </div>
       </div>
 
-    </div>
+      <!-- ERM TAB -->
+      <div class="dee-tab-panel" id="tab-erm" role="tabpanel" aria-labelledby="tab-btn-erm">
+        <div class="dee-body">
+          <p class="print-header">The Financial Analyst · Enterprise Risk Brief (Sample)</p>
+          <p class="dee-toc-label">Contents</p>
+          <ul class="dee-toc-list">
+            <li><strong>1. Risk posture summary</strong></li>
+            <li><strong>2. Disclosed risk landscape</strong></li>
+            <li class="dee-sub">2.1 Risk management framework &nbsp;·&nbsp; 2.2 Disclosed principal risks</li>
+            <li><strong>3. Independent risk assessment</strong></li>
+            <li class="dee-sub">3.1 Scoring scales &nbsp;·&nbsp; 3.2 Risk register and heat map &nbsp;·&nbsp; 3.3 Challenge: under-weighted risks</li>
+            <li><strong>4. Financial risk quantification</strong></li>
+            <li class="dee-sub">4.1 Exposure at standard stress &nbsp;·&nbsp; 4.2 Hedged versus economic exposure</li>
+            <li><strong>5. Stress test and risk capacity</strong></li>
+            <li class="dee-sub">5.1 Combined stress scenario &nbsp;·&nbsp; 5.2 Capacity versus stress</li>
+            <li><strong>6. Governance maturity</strong></li>
+            <li class="dee-sub">6.1 COSO ERM assessment</li>
+            <li><strong>7. Priority actions and key risk indicators</strong></li>
+          </ul>
+          <hr class="dee-divider">
+          <p class="dee-exec-title">Executive Summary</p>
+          <div class="dee-metrics">
+            <div class="dee-metric"><p class="dee-metric-label">Leverage under stress</p><p class="dee-metric-value">1.57×</p><p class="dee-metric-sub">From 1.2× · company target ≤ 1.5×</p></div>
+            <div class="dee-metric"><p class="dee-metric-label">Liquidity headroom</p><p class="dee-metric-value">€12.1bn</p><p class="dee-metric-sub">After stressed free cash flow</p></div>
+            <div class="dee-metric"><p class="dee-metric-label">Equity hit</p><p class="dee-metric-value">€2.5bn</p><p class="dee-metric-sub">4% of equity · mainly pensions</p></div>
+          </div>
+          <div class="dee-qa"><p class="dee-q">Could the company absorb its top risk?</p><p class="dee-a">Not within its own limits. The stress scenario is built from the risk the company itself ranks first, geopolitical escalation: a sustained energy-supply disruption, recession in key markets, revenue down 6% and margin down three points. Profit falls by €3.0 billion and industrial net debt to EBITDA rises from 1.2× to 1.57×, above the company's stated ceiling of 1.5×. Liquidity and equity are not the constraint; leverage is.</p></div>
+          <div class="dee-qa"><p class="dee-q">Where does this brief differ from the company's own view?</p><p class="dee-a">The company reports that its overall risk situation has not changed significantly. The balance sheet tells a different story: leverage was 0.9× at the financial year-end and 1.2× six months later, after two large software acquisitions. From the year-end position, the same scenario would have looked comfortably within appetite. The brief uses the latest balance sheet in the documents, because position data goes stale.</p></div>
+          <div class="dee-qa"><p class="dee-q">What does the disclosure miss?</p><p class="dee-a">The company's market-risk sensitivities look small (a 10% move in the dollar changes net income by €22 million) because they cover hedged instruments only. Currency translation took five points off revenue growth in the latest half-year, and a one-point fall in the pension discount rate would add €2.5 billion to the pension obligation. The brief adds acquisition earn-in and unhedged translation exposure as challenge risks the risk report under-weights.</p></div>
+          <div class="dee-rec"><p class="dee-rec-label">Risk posture</p><p class="dee-rec-text"><strong>STRETCHED</strong>: stressed leverage of 1.57× breaches the company's own 1.5× target, while liquidity headroom of €12.1 billion and an equity hit of 4% remain well within capacity. Rejected alternative: WITHIN APPETITE, because ample liquidity does not reduce leverage. The Board should ask for the leverage path under the stress scenario, the headroom in the impairment tests for the acquired software businesses, and the actions management would take before the target is breached.</p></div>
+          <p class="dee-anon">Company name and specific transaction references removed. All figures computed from the company's published annual and half-year reports; scoring scales and screening thresholds are the brief's own, not company policy. Illustrative of the analytical output, not for investment purposes.</p>
+        </div>
+      </div>
+
+</div>
   </div>
 </section>
 
@@ -1078,7 +1142,7 @@
         <li>Control: clear rules on what the machine prepares and what a person signs off.</li>
         <li>Trust: numbers the board can rely on, because every source and step can be traced.</li>
       </ul>
-      <p>The Financial Analyst shows what that looks like in practice. Three analyses a CFO relies on (credit exposure, investment screening and business unit performance) run end to end on public data. The CFO chooses which documents go in and owns the conclusion. Analysis that took days takes hours, and the judgment stays with the person accountable for it.</p>
+      <p>The Financial Analyst shows what that looks like in practice. Four analyses a CFO relies on (credit exposure, investment screening, business unit performance and enterprise risk) run end to end on public data. The CFO chooses which documents go in and owns the conclusion. Analysis that took days takes hours, and the judgment stays with the person accountable for it.</p>
     </div>
   </div>
 </section>
